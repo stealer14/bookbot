@@ -13,7 +13,9 @@ def main():
     Test the get_book_text function.
     """
     path = './books/frankenstein.txt'
-    print(get_book_text(path))
+    text = get_book_text(path)
+    word_count = count_words(text)
+    print(word_count)
 
 def get_book_text(path_to_file):
     """
@@ -22,5 +24,18 @@ def get_book_text(path_to_file):
     with open(path_to_file) as f:
         file_content = f.read()
     return file_content
+
+def count_words(text):
+    """
+    Count the number of books in a text.
+    """
+    text = text.split()
+    count = 0
+    for word in text:
+        #if len(word) < 1: continue
+        count += 1
+
+    total_count = f"{count} words found in the document"
+    return total_count
 
 main()
