@@ -8,20 +8,19 @@
 # filepath as input and returns the contents of the 
 # file as a string
 
-def get_book_text(path_to_file):
-    """
-    Read the contents of a file and return it as a string.
-    """
-    with open (path_to_file) as f:
-        file_content = f.read()
-    return file_content
-
 def main():
     """
     Test the get_book_text function.
     """
-    path = 'bookbot/books/frankenstein.txt'
+    path = './books/frankenstein.txt'
     print(get_book_text(path))
 
+def get_book_text(path_to_file):
+    """
+    Read the contents of a file and return it as a string.
+    """
+    with open(path_to_file) as f:
+        file_content = f.read()
+    return file_content
 
 main()
