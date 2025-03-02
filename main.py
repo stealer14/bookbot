@@ -7,6 +7,7 @@
 # Write a new function called get_book_test that takes a 
 # filepath as input and returns the contents of the 
 # file as a string
+from stats import count_words
 
 def main():
     """
@@ -24,18 +25,5 @@ def get_book_text(path_to_file):
     with open(path_to_file) as f:
         file_content = f.read()
     return file_content
-
-def count_words(text):
-    """
-    Count the number of books in a text.
-    """
-    text = text.split()
-    count = 0
-    for word in text:
-        #if len(word) < 1: continue
-        count += 1
-
-    total_count = f"{count} words found in the document"
-    return total_count
 
 main()
