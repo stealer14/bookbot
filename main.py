@@ -7,21 +7,24 @@
 # Write a new function called get_book_test that takes a 
 # filepath as input and returns the contents of the 
 # file as a string
-
-from stats import count_words, let_count
+import sys
+from stats import count_words, let_count, generate_report
 
 def main():
     """
     Test the get_book_text function.
     """
-    path = './books/frankenstein.txt'
+    if len(sys.argv) > 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        path = sys.argv[1]
+
     text = get_book_text(path)
     word_count = count_words(text)
     word_dict = let_count(text)
-    
-    print(word_count)
-    print(word_dict)
-    
+    generate_report(word_dict, path, word_count)
+
 def get_book_text(path_to_file):
     """
     Read the contents of a file and return it as a string.
