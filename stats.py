@@ -40,10 +40,12 @@ def generate_report(dict, path, word_count):
 
     print("--------- Character Count -------")
     kv_dict = []
+    #iterating through dictionary to discart non alpha char, save as a dict key value pair
     for ky, val in dict.items():
         if not ky.isalpha(): continue
         kv_dict.append(f"{ky}: {val}")
     
+    #Sorting list of dictionary key value pairs by value using lamdba function
     for item in sorted(kv_dict, key = lambda item: item[val], reverse= True):
         print(item)
 
